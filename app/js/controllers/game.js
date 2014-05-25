@@ -155,18 +155,19 @@ Game.prototype = {
     // 2,0  2,1  2,2
     //--------------
 
-
     var name = "";
     var ocurrences = new Array(3);
     var letters = "ABCD"; 
 
-    firstForLoop: for(var i = 0;i < b.length;i++){
-      for(var j = 0;j < b[0].length;j++){
+    for(var i = 0;b.length-3;i++){
+      for(var j = 0;b.length-3 && b[i][j] == '';j++){
         //Left to Right
-        if (i>=(b.length-3) || j>=(b.length-3)) {break firstForLoop;};
+
+       
         for (var k = 0; i < 3; i++) {
-           name+=b[i+k][j];   
+           name+=b[i][j+k];   
         };
+     
 
         for (var n = 0; n <= name.length; n++) {
           if (name.length != 4) {
@@ -196,7 +197,7 @@ Game.prototype = {
 
         //Up to Down
         for (var k = 0; i < 3; i++) {
-           name+=b[i][j+k];
+           name+=b[i+k][j];
         }
 
 
