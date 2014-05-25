@@ -40,21 +40,21 @@ Game.prototype = {
       this.data.title = this.data.winner + " won!";
     } else {
       if (this.data.player1 != null) {
-        this.data.title = this.data.player1 + " vs. ";
+        this.data.title = this.data.player1 + " (A) vs. ";
         if (this.data.player2 != null) {
-          this.data.title = this.data.title + this.data.player2 + ' vs. ';
+          this.data.title = this.data.title + this.data.player2 + ' (B) vs. ';
         } else {
           this.data.title = this.data.title + "(awaiting 2nd player) vs. ";
           
         }
         if (this.data.player3 != null) {
-          this.data.title = this.data.title + this.data.player3 + ' vs. ';
+          this.data.title = this.data.title + this.data.player3 + ' (C) vs. ';
         } else {
           this.data.title = this.data.title + "(awaiting 3rd player) vs. ";
           
         }
         if (this.data.player4 != null) {
-          this.data.title = this.data.title + this.data.player4;
+          this.data.title = this.data.title + this.data.player4 + ' (D)';
         } else {
           this.data.title = this.data.title + "(awaiting 4th player)";
           
