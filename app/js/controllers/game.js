@@ -32,7 +32,9 @@ Game.prototype = {
       this.data.player3 = player;
     }
   },
+
   title: function() {
+    var numPlayersNotActive = 0;
     if ( this.isTie() ) {
       this.data.title = "It's a tie!"
     } else if (this.data.winner) {
@@ -44,16 +46,19 @@ Game.prototype = {
           this.data.title = this.data.title + this.data.player2 + ' vs. ';
         } else {
           this.data.title = this.data.title + "(awaiting 2nd player) vs. ";
+          numPlayersNotActive++;
         }
         if (this.data.player3 != null) {
           this.data.title = this.data.title + this.data.player3 + ' vs. ';
         } else {
-          this.data.title = this.data.title + "(awaiting 3nd player) vs. ";
+          this.data.title = this.data.title + "(awaiting 3rd player) vs. ";
+          numPlayersNotActive++;
         }
         if (this.data.player4 != null) {
           this.data.title = this.data.title + this.data.player4 + ' vs. ';
         } else {
           this.data.title = this.data.title + "(awaiting 4th player)";
+          numPlayersNotActive++;
         }
       }
     }
