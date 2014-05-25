@@ -48,7 +48,7 @@ Game.prototype = {
         if (this.data.player3 != null) {
           this.data.title = this.data.title + this.data.player3 + ' vs. ';
         } else {
-          this.data.title = this.data.title + "(awaiting 3nd player) vs. ";
+          this.data.title = this.data.title + "(awaiting 3rd player) vs. ";
         }
         if (this.data.player4 != null) {
           this.data.title = this.data.title + this.data.player4 + ' vs. ';
