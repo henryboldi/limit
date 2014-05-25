@@ -3,8 +3,8 @@
 
   <div class="board">
     <table>
-      <tr ng-repeat="row in [0, 1, 2]">
-        <td ng-repeat="col in [0, 1, 2]" ng-click="game.move(username, row, col)" ng-mouseover="mouseOver(username, row, col, $event)" ng-mouseout="mouseOut($event)">
+      <tr ng-repeat="row in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]">
+        <td ng-repeat="col in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]" ng-click="game.move(username, row, col)" ng-mouseover="mouseOver(username, row, col, $event)" ng-mouseout="mouseOut($event)">
           {{ game.board()[row][col] }}
         </td>
       </tr>

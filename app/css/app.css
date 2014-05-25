@@ -2,16 +2,11 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #fff;
 }
 
 header {
+  background: #000;
   color: #efefef;
-  text-align: center;
-}
-
-html {
-  background-color: #fff;
 }
 
 header h1 {
@@ -21,12 +16,6 @@ header h1 {
 header a {
   text-decoration: none;
   color: #efefef;
-}
-
-.waiting {
-  margin-top: 50px;
-  color: #5C5C5C;
-  font-size: 18px;
 }
 
 footer {
@@ -47,11 +36,11 @@ label {
 }
 
 .container {
+  width: 80%;
   margin: 0 auto;
   background: #efefef;
   padding: 1em;
   text-align: center;
-  background-color: #fff;
 }
 
 
@@ -82,47 +71,3 @@ label {
   border-bottom: none;
 }
 
-#name {
-  margin-top: 10%;
-  display: block;
-  width: 300px;
-  height: 60px;
-  background-color: rgba(255, 0, 0, 0);
-  color: #5C5C5C;
-  font-size: 36px;
-  font-weight: 700;
-  text-align: center;
-  border-style: none;
-  margin-left: auto;
-  margin-right: auto;
-  outline:none;
-  box-shadow:none;
-  -webkit-appearance: none;
-  outline-width: 0;
-  outline-color: white;
-  border-bottom: #5C5C5C solid;
-
-}
-  ::-webkit-input-placeholder { /* WebKit browsers */
-      color: #5C5C5C;
-  }
-  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-      color: #5C5C5C;
-      opacity:  1;
-  }
-  ::-moz-placeholder { /* Mozilla Firefox 19+ */
-      color: #5C5C5C;
-      opacity:  1;
-  }
-  :-ms-input-placeholder { /* Internet Explorer 10+ */
-      color: #5C5C5C;
-  }
-
-.newbtn {
-  margin-top: 10px;
-  background-color: #FF7C06;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-}
