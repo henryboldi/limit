@@ -159,8 +159,11 @@ Game.prototype = {
     var ocurrences = new Array(3);
     var letters = "ABCD"; 
 
-    for(var i = 0;b.length-3;i++){
-      for(var j = 0;b.length-3 && b[i][j] == '';j++){
+    console.log(b[0][0]);
+
+    for(var i = 0;b[0].length-3;i++){
+      console.log(i);
+      for(var j = 0; j < 18 && b[i][j] === "";j++){
         //Left to Right
 
        
@@ -254,6 +257,7 @@ Game.prototype = {
           }
           for (var g = 0; g < ocurrences.length;g++) {
             if(ocurrences[g] == 4){
+            console.log(playerForMark(letters.charAt(g)));
              return playerForMark(letters.charAt(g));
             }
           };
@@ -309,7 +313,7 @@ angular.module('ticTacToe.controllers.game', ['firebase', 'ngCookies'])
     function($scope, $routeParams, $location, $cookies, angularFire, angularFireCollection) {
       $scope.username = $cookies.username;
 
-      var gameUrl = 'https://radiant-fire-7849.firebaseio.com/games/' + $routeParams.gameId;
+      var gameUrl = 'https://radiant-fire-7849.firebaseio.com/games1/' + $routeParams.gameId;
       var disconnectedRef = new Firebase(gameUrl + "/disconnected/" + $scope.username);
       disconnectedRef.onDisconnect().set(true);
       var promise = angularFire(gameUrl, $scope, 'gameData', {});
