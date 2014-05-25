@@ -26,16 +26,6 @@ function watchUsername($scope, $cookies) {
 }
 
 function watchGames($scope, $location, filter) {
-
-  // purge any games that have ended and been abandoned
-  if ($scope.activeGames.length) {
-    for (var i in $scope.activeGames) {
-      var game = new Game($scope.activeGames[i]);
-      if (game.isAbandoned()) {
-        $scope.activeGames.remove($scope.activeGames[i]);
-      }
-    }
-  }
   $scope.$watch('activeGames.length', function () {
     $scope.waitingGames = filter($scope.activeGames, function(game) {
       //if (typeof game === 'undefined') $scope.activeGames.splice($scope.activeGames.indexOf(game), 1);
@@ -44,7 +34,15 @@ function watchGames($scope, $location, filter) {
       return (player2Undefined && player1NotCurrentUser);
     });
 
-
+    // purge any games that have ended and been abandoned
+    if ($scope.activeGames.length) {
+      for (var i in $scope.activeGames) {
+        var game = new Game($scope.activeGames[i]);
+        if (game.isAbandoned()) {
+          $scope.activeGames.remove($scope.activeGames[i]);
+        }
+      }
+    }
   });
 
   $scope.joinGame = function(game) {

@@ -20,7 +20,6 @@ function Game(data) {
 
 Game.prototype = {
   addPlayer: function(player) {
-    if (this.data.player1 != null && this.data.player2 != null && this.data.player3 != null && this.data.player4 != null) return;
     if (this.data.player1 == null) {
       this.data.player1 = player;
       this.data.whoseTurn = this.data.player1;
@@ -28,13 +27,13 @@ Game.prototype = {
       this.data.player2 = player;
     } else if (this.data.player3 == null) {
       this.data.player3 = player;
-    } else if (this.data.player3 == null) {
-      this.data.player3 = player;
+    } else if (this.data.player4 == null) {
+      this.data.player4 = player;
     }
   },
 
   title: function() {
-    var numPlayersNotActive = 0;
+    
     if ( this.isTie() ) {
       this.data.title = "It's a tie!"
     } else if (this.data.winner) {
@@ -46,19 +45,19 @@ Game.prototype = {
           this.data.title = this.data.title + this.data.player2 + ' vs. ';
         } else {
           this.data.title = this.data.title + "(awaiting 2nd player) vs. ";
-          numPlayersNotActive++;
+          
         }
         if (this.data.player3 != null) {
           this.data.title = this.data.title + this.data.player3 + ' vs. ';
         } else {
           this.data.title = this.data.title + "(awaiting 3rd player) vs. ";
-          numPlayersNotActive++;
+          
         }
         if (this.data.player4 != null) {
-          this.data.title = this.data.title + this.data.player4 + ' vs. ';
+          this.data.title = this.data.title + this.data.player4;
         } else {
           this.data.title = this.data.title + "(awaiting 4th player)";
-          numPlayersNotActive++;
+          
         }
       }
     }
@@ -129,10 +128,8 @@ Game.prototype = {
       return this.data.player2;
     } else if (player == this.data.player2) {
       return this.data.player3;
-    }
-     else if (player == this.data.player3) {
+    } else if (player == this.data.player3) {
       return this.data.player4;
-    
     } else if (player == this.data.player4) {
       return this.data.player1;
     }
