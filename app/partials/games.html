@@ -1,0 +1,19 @@
+<div>
+
+  <div>
+    <form ng-submit="createGame()">
+      <label for="username">Your name:</label>
+      <input type="text" ng-model="username" placeholder="What's your name?">
+      <button ng-disabled="usernameNotEntered" type="submit">Create New Game</button>
+    </form>
+  </div>
+
+  <div class="game-list"> <!-- ng-show="waitingGames.length > 0" -->
+    <h2>Games Waiting for a Second Player</h2>
+
+    <div ng-repeat="game in waitingGames">
+      <button ng-disabled="usernameNotEntered" ng-click="joinGame(game)">Play {{ game.player1 }}</button>
+    </div>
+  </div>
+
+</div>
