@@ -41,17 +41,17 @@ Game.prototype = {
       if (this.data.player1 != null) {
         this.data.title = this.data.player1 + " vs. ";
         if (this.data.player2 != null) {
-          this.data.title = this.data.title + this.data.player2;
+          this.data.title = this.data.title + this.data.player2 + ' vs. ';
         } else {
-          this.data.title = this.data.title + "(awaiting 2nd player)";
+          this.data.title = this.data.title + "(awaiting 2nd player) vs. ";
         }
         if (this.data.player3 != null) {
-          this.data.title = this.data.title + this.data.player3;
+          this.data.title = this.data.title + this.data.player3 + ' vs. ';
         } else {
-          this.data.title = this.data.title + "(awaiting 3nd player)";
+          this.data.title = this.data.title + "(awaiting 3nd player) vs. ";
         }
         if (this.data.player4 != null) {
-          this.data.title = this.data.title + this.data.player4;
+          this.data.title = this.data.title + this.data.player4 + ' vs. ';
         } else {
           this.data.title = this.data.title + "(awaiting 4th player)";
         }
