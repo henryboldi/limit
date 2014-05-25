@@ -3,7 +3,7 @@ var static = require('node-static');
 
 
 var file = new(static.Server)('./app');
-var port = process.env.PORT || 1337;
+var port = process.env.PORT || 5000;
 require('http').createServer(function (request, response) {
   file.serve(request, response, function(err, result) {
     if (err) {

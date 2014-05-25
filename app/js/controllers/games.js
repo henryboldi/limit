@@ -8,7 +8,7 @@ angular.module('ticTacToe.controllers.games', ['firebase', 'ngCookies'])
       $scope.usernameNotEntered = ($scope.username && $scope.username.length > 0) ? false : true;
       watchUsername($scope, $cookies);
 
-      var url = 'https://radiant-fire-7849.firebaseio.com/games';
+      var url = 'https://tictactoe-angularjs.firebaseio.com/games';
       $scope.activeGames = angularFireCollection(url);
       watchGames($scope, $location, filterFilter);
       // var promise = angularFire(url, $scope, 'games');
@@ -30,10 +30,8 @@ function watchGames($scope, $location, filter) {
     $scope.waitingGames = filter($scope.activeGames, function(game) {
       //if (typeof game === 'undefined') $scope.activeGames.splice($scope.activeGames.indexOf(game), 1);
       var player2Undefined = (typeof game.player2 === 'undefined');
-      var player3Undefined = (typeof game.player3 === 'undefined');
-      var player4Undefined = (typeof game.player4 === 'undefined');
       var player1NotCurrentUser = (game.player1 != $scope.username);
-      return (player2Undefined && player1NotCurrentUser && player3Undefined && player4Undefined);
+      return (player2Undefined && player1NotCurrentUser);
     });
 
     // purge any games that have ended and been abandoned
