@@ -135,7 +135,7 @@ Game.prototype = {
   move: function(player, row, col) {
     if ( this.isOver() ) return;
     if ( !this.isPlayersTurn(player) ) return;
-    if (row < 0 || row > 2 || col < 0 || col > 2) return;
+    if (row < 0 || row > 19 || col < 0 || col > 19) return;
     if (this.data.board[row][col] != '') return;
 
     this.data.board[row][col] = this.markForPlayer(player);
