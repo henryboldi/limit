@@ -94,6 +94,7 @@ Game.prototype = {
     }
     return true;
   },
+
   isOver: function() {
     return (this.isTie() || this.data.winner != null);
   },
@@ -325,6 +326,9 @@ function watchGame($scope, $routeParams, angularFire, angularFireCollection) {
     $scope.game = new Game($scope.gameData);
     $scope.game.setConnected($scope.username);
   });
+
+
+
 
   $scope.mouseOver = function(player, row, col, $event) {
     if (! $scope.game.isPlayersTurn(player) ) return;

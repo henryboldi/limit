@@ -88,7 +88,8 @@ label {
 #name {
   margin-top: 10%;
   display: block;
-  width: 300px;
+  width: 90%;
+  max-width: 300px;
   height: 60px;
   background-color: rgba(255, 0, 0, 0);
   color: #5C5C5C;
@@ -103,6 +104,7 @@ label {
   -webkit-appearance: none;
   outline-width: 0;
   outline-color: white;
+  border-radius: 0px;
   border-bottom: #5C5C5C solid;
 
 }

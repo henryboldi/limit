@@ -26,25 +26,25 @@ function watchUsername($scope, $cookies) {
 }
 
 function watchGames($scope, $location, filter) {
+
+  // purge any games that have ended and been abandoned
+  if ($scope.activeGames.length) {
+    for (var i in $scope.activeGames) {
+      var game = new Game($scope.activeGames[i]);
+      if (game.isAbandoned()) {
+        $scope.activeGames.remove($scope.activeGames[i]);
+      }
+    }
+  }
   $scope.$watch('activeGames.length', function () {
     $scope.waitingGames = filter($scope.activeGames, function(game) {
       //if (typeof game === 'undefined') $scope.activeGames.splice($scope.activeGames.indexOf(game), 1);
-      var player2Undefined = (typeof game.player2 === 'undefined');
-      var player3Undefined = (typeof game.player3 === 'undefined');
-      var player4Undefined = (typeof game.player4 === 'undefined');
+      var player2Undefined = (typeof game.player2 === 'undefined' || typeof game.player3 === 'undefined' || typeof game.player4 === 'undefined' );
       var player1NotCurrentUser = (game.player1 != $scope.username);
-      return (player2Undefined && player1NotCurrentUser && player3Undefined && player4Undefined);
+      return (player2Undefined && player1NotCurrentUser);
     });
 
-    // purge any games that have ended and been abandoned
-    if ($scope.activeGames.length) {
-      for (var i in $scope.activeGames) {
-        var game = new Game($scope.activeGames[i]);
-        if (game.isAbandoned()) {
-          $scope.activeGames.remove($scope.activeGames[i]);
-        }
-      }
-    }
+
   });
 
   $scope.joinGame = function(game) {
