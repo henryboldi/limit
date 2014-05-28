@@ -5,8 +5,6 @@
 
 Limit is a 20x20 multiplayer tic-tac-toe game that is awesome. To play limit get a bunch of friends together and go to [limit.herokuapp.com](http://limit.herokuapp.com)
 
-If you want to help work on limit, you can find the [oringal repo here](http://github.com/the-next-2048/limit/).
-
 ##The Rules
 
 > - At the moment, you need all four players in order to play.
@@ -18,13 +16,10 @@ If you want to help work on limit, you can find the [oringal repo here](http://g
 
 Limit was created at CodeDay Chicago in 2014 by [Jacob Elias](http://twitter.com/_jelias_), [Henry Boldizsar](http://twitter.com/henryboldi), [Niraj Pant](http://twitter.com/PantNiraj), and [Stefan Aleksic](http://twitter.com/stestefanfan). In 24 **exaughsting** hours we made Limit, and won **Best Game** award. As a team we decided that instead of the traditional: *code for hours, win, and forget about the repo.* That we would keep working on Limit to make it the best it can be.
 
-## To-do
+# Note
 
-- [ ] Add five second counter per turn to speed up gameplay
-- [ ] Setup user properties (colors, first inital instead of A, B, C, D)
-- [ ] Detect winner when player gets four in-a-row
-- [ ] Setup lobby/in-game chat
-- [ ] Distuinguish who's turn it is (underline username when it's their turn)
+Development for Limit has moved to [another repo](http://github.com/the-next-2048/limit/), **this repo is outdated**. If you want to help work on Limit please go the the [new repo here](http://github.com/the-next-2048/limit/).
+
 
 ## Thanks
 
