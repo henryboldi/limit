@@ -1,7 +1,5 @@
 ![alt text](https://raw.githubusercontent.com/the-next-2048/limit/master/app/img/logo.png "Limit")
 
-----
-
 ## What is Limit & How do I Play?
 
 Limit is a 20x20 multiplayer tic-tac-toe game that is awesome. To play limit get a bunch of friends together and go to [limit.herokuapp.com](http://limit.herokuapp.com)
