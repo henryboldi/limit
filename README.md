@@ -1,6 +1,5 @@
 ![alt text](https://raw.githubusercontent.com/the-next-2048/limit/master/app/img/logo.png "Limit")
 
-======
 
 ## What is Limit & How do I Play?
 
